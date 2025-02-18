@@ -1,0 +1,53 @@
+name: Feature request
+description: Request a feature.
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: Request
+    validations:
+      required: true
+  - type: dropdown
+    id: apps
+    attributes:
+      label: What applications(s) are the request for?
+      multiple: true
+      options:
+        - Hub (XP)
+        - Hub (Send & Receive)
+        - Hub (Other)
+        - Explorer
+        - Docs
+        - RPC Service
+        - Third Party Application
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: persona
+    attributes:
+      label: Who are you?
+      multiple: true
+      options:
+        - Individual
+        - Business
+        - Application Developer
+        - Infrastructure Provider
+        - Researcher
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: wallets
+    attributes:
+      label: What wallet(s) are you using?
+      multiple: true
+      options:
+        - Metamask
+        - UniSat
+        - OKX Wallet
+        - Coinbase Wallet
+        - XDEFI Wallet
+        - Phantom
+        - Other
