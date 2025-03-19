@@ -1,0 +1,94 @@
+name: XP Task Bug Report
+description: File a bug report for an XP task.
+labels: ["bug", "triage", "xp"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen? Attach any screenshots or logs you may have.
+    validations:
+      required: true
+  - type: dropdown
+    id: apps
+    attributes:
+      label: What applications(s) are you using?
+      options:
+        - Hub (XP)
+    validations:
+      required: true
+  - type: input
+    id: third-party-service
+    attributes:
+      label: Which XP tasks are you seeing the issue on?
+      description: Please include the full name of the task.
+    validations:
+      required: false
+  - type: dropdown
+    id: persona
+    attributes:
+      label: Who are you?
+      multiple: true
+      options:
+        - Individual
+        - Business
+        - Application Developer
+        - Infrastructure Provider
+        - Researcher
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: wallets
+    attributes:
+      label: What wallet(s) are you using?
+      multiple: true
+      options:
+        - Metamask
+        - UniSat
+        - OKX Wallet
+        - Coinbase Wallet
+        - XDEFI Wallet
+        - Phantom
+        - Other
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Chromium
+        - Brave
+        - Safari
+        - Microsoft Edge
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: tx-hash
+    attributes:
+      label: Do you have transaction hash(es) related to this issue?
+      description: If so, please provide the transaction hash(es).
+    validations:
+      required: false
+
+  - type: input
+    id: wallet-address
+    attributes:
+      label: What wallet address was used?
+      description: If you used multiple wallets, please provide all the addresses.
+    validations:
+      required: false
+
+  - type: input
+    id: discord-username
+    attributes:
+      label: What is your Discord username? (Optional)
+      description: This will help us find you to gather more information.
+    validations:
+      required: false
+
+
