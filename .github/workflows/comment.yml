@@ -15,10 +15,20 @@ jobs:
           script: |
             const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
             const comment = context.payload.comment;
+            let shouldDelete = false
             if (emailRegex.test(comment.body)) {
+              shouldDelete = true;
+            }
+            if (shouldDelete) {
+              console.log('Deleting comment:', {
+                id: comment.id,
+                body: comment.body,
+                user: comment.user.login,
+                created_at: comment.created_at
+              });
               await github.rest.issues.deleteComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: comment.id
-              });
+              })
             }
